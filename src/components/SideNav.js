@@ -28,7 +28,7 @@ const SideNav = () => {
 const sideNavStyle = {
   height: '100vh',
   width: '350px',
-  // wrast: you've got a duplicate "backround" value here.
+  // wrast: you've got a duplicate "backround" value here. You should remove the first one.
   background: 'rgb(55,82,130)',
   background:
     'Linear-gradient(135deg,rgba(55,82,130,1) 0%,rgba(10,96,194,5) 100%)',
