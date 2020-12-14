@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import SideItemRecursive from './SideItemRecursive';
 import { NavItemsRecursive } from '../data/NavItemData';
 
@@ -11,7 +11,8 @@ import { NavItemsRecursive } from '../data/NavItemData';
 // What I think you need to do is have your `SideNav` component take in one prop
 // called "tree" and the shape of that data should be a nested array of objects.
 
-const SideNavBetter = () => {
+// the below URL is just an example. Replace it with whatever your php is.
+const SideNavBetter = ({ url = 'https://swapi.dev/api/people' }) => {
   const [navItems, setNavItems] = useState(NavItemsRecursive);
   const handleItemClick = useCallback(
     (e) => {
@@ -23,6 +24,13 @@ const SideNavBetter = () => {
     },
     [navItems]
   );
+
+  useEffect(async () => {
+    const reponse = await fetch(url);
+    // const data = await response.json()
+    // do something with the data
+    // setNavItems(data)
+  }, [url]);
 
   return (
     <div style={sideNavStyle}>
