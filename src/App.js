@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import './App.css';
-import SideNav from "./components/SideNav";
+import SideNavRecursive from './components/SideNavRecursive';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-       <SideNav/>
+        <SideNavRecursive />
       </header>
     </div>
   );

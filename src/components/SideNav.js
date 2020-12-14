@@ -2,6 +2,16 @@ import React from 'react';
 import SideItem from './SideItem';
 import { NavItems } from '../data/NavItemData';
 
+// Overall Comments
+// *
+// By the description here: https://github.com/ShootProof/recruiting-full-stack,
+// I'd say that they're very much expecting you do use recursion to handle the
+// rendering of the tree. I think you'll get points taken off if you try to hard
+// code a 3-level tree.
+// What I think you need to do is have your `SideNav` component take in one prop
+// called "tree" and the shape of that data should be a nested array of objects.
+// I've added a couple of files named *Recursive.ts to show what I mean.
+
 // wrast: if you're just going to return something from a function like this,
 // you can just skip the syntax like the below. Notice I've also shortened your
 // map function.
