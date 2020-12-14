@@ -8,12 +8,10 @@ import React, { useState, useCallback } from 'react';
  */
 const hasChildren = (item) => {
   const test = !!item && !!item.nodes && item.nodes.length > 0;
-  console.log(`has children: `, item, `\ntest: `, test);
   return test;
 };
 
 const SideItemRecursive = ({ items, handleItemClick }) => {
-  console.log(`items.length: `, items && items.length);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = useCallback(
@@ -29,7 +27,6 @@ const SideItemRecursive = ({ items, handleItemClick }) => {
       {items &&
         items.map((item) => {
           const { name, link } = item;
-          console.log(`name: `, name, ` link: `, link);
           return (
             <div key={name}>
               {(link && (
@@ -60,19 +57,6 @@ const nameStyle = {
   background: 'transparent',
   margin: '20px',
   fontWeight: '600',
-};
-
-const sideItemStyle = {
-  background: '#333',
-  margin: '0 0 0 20px',
-  height: 'auto',
-  minHeight: '50px',
-  width: '350px',
-  color: '#fff',
-  display: 'flex',
-  alignItems: 'flex-start',
-  flexDirection: 'column',
-  cursor: 'pointer',
 };
 
 const linkContainerStyle = {
